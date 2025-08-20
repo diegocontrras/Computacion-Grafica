@@ -35,7 +35,7 @@ static const char* fShader = "						\n\
 out vec4 color;										\n\
 void main()											\n\
 {													\n\
-	color = vec4(1.0f,0.0f,0.0f,1.0f);	 			\n\
+	color = vec4(0.0f,0.0f,0.0f,1.0f);	 			\n\ // Cambio de color de las formas para una mejor visualizacion
 }";
 
 
@@ -206,4 +206,5 @@ int main()
 
 	return 0;
 }
+
 
