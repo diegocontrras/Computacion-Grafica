@@ -8,6 +8,7 @@ tomando rango de colores RGB y con una periodicidad de 2 segundos.
 todas las letras son del mismo color. */
 
 #include <stdio.h>
+#include <stdlib.h> // Usar random
 #include <string.h>
 #include <glew.h>
 #include <glfw3.h>
@@ -172,21 +173,27 @@ int main()
 	CrearTriangulo();
 	CompileShaders();
 
-
+	// Ejercicio 01
+	
 	//Loop mientras no se cierra la ventana
 	while (!glfwWindowShouldClose(mainWindow))
 	{
 		//Recibir eventos del usuario
 		glfwPollEvents();
-
-		//Limpiar la ventana
-		glClearColor(0.0f,0.0f,0.0f,1.0f);
+		
+		// Se crean variables donde se almacenará en cada while un numero random
+		float rojo = static_cast<float>(rand()) / static_cast<float>(RAND_MAX); 
+		float verde = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+		float azul = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+		glClearColor(rojo, verde, azul, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		Sleep(2000); // 2 segundos
 
 		glUseProgram(shader);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES,0,3);
+		glDrawArrays(GL_TRIANGLES,0,12);
 		glBindVertexArray(0);
 
 		glUseProgram(0);
@@ -198,5 +205,5 @@ int main()
 
 
 	return 0;
-
 }
+
