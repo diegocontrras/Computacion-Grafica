@@ -42,6 +42,8 @@ void main()											\n\
 
 void CrearTriangulo()
 {
+	/* 2.- 3 letras iniciales de sus nombres creadas a partir de triángulos, 
+ 	todas las letras son del mismo color. */
 	GLfloat vertices[] = {
 		-0.9f,  0.2f, 0.0f,
 		-0.6f, 0.2f, 0.0f,
@@ -158,8 +160,48 @@ void CrearTriangulo()
 		0.0f, 0.0f, 0.0f,
 		-0.3f, -0.5f, 0.0f,
 		0.0f, -0.5f, 0.0f, // Letra A
-	
+
+		0.9f, 0.3f, 0.0f,
+		0.8f, 0.2f, 0.0f,
+		0.8f, 0.6f, 0.0f,
+		
+		0.8f, 0.6f, 0.0f,
+		0.8f, 0.3f, 0.0f,
+		0.7f, 0.3f, 0.0f,
+		
+		0.7f, 0.3f, 0.0f,
+		0.7f, 0.6f, 0.0f,
+		0.8f, 0.6f, 0.0f,
+		
+		0.6f, 0.2f, 0.0f,
+		0.7f, 0.0f, 0.0f,
+		0.7f, 0.6f, 0.0f,
+		
+		0.6f, 0.2f, 0.0f,
+		0.6f, -0.3, 0.0f,
+		0.7f, 0.0f, 0.0f,
+		
+		0.6f, -0.3, 0.0f,
+		0.7f, 0.0f, 0.0f,
+		0.8f, -0.3f, 0.0f,
+		
+		0.6f, -0.3f, 0.0f,
+		0.8f, -0.3f, 0.0f,
+		0.7f, -0.5f, 0.0f,
+		
+		0.8f, -0.3f, 0.0f,
+		0.7f, -0.5f, 0.0f,
+		0.8f, -0.5f, 0.0f,
+		
+		0.8f, -0.5f, 0.0f,
+		0.8f, -0.3f, 0.0f,
+		0.9f, -0.4f, 0.0f,
+		
+		0.8f, -0.3f, 0.0f,
+		0.9f, -0.4f, 0.0f,
+		0.9f, -0.2f, 0.0f // Letra C
 	};
+	
 	glGenVertexArrays(1, &VAO); //generar 1 VAO
 	glBindVertexArray(VAO);//asignar VAO
 
@@ -319,6 +361,7 @@ int main()
 
 	return 0;
 }
+
 
 
 
