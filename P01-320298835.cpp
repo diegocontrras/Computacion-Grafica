@@ -13,6 +13,7 @@ todas las letras son del mismo color. */
 #include <glew.h>
 #include <glfw3.h>
 #include <Windows.h>
+#include <ctime>
 //Dimensiones de la ventana
 const int WIDTH = 800, HEIGHT = 800;
 GLuint VAO, VBO, shader;
@@ -276,6 +277,8 @@ void CompileShaders() {
 }
 int main()
 {
+	srand(time(0)); // Asegurar números aleatorios
+	
 	//Inicialización de GLFW
 	if (!glfwInit())
 	{
@@ -361,6 +364,7 @@ int main()
 
 	return 0;
 }
+
 
 
 
