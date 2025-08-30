@@ -190,6 +190,77 @@ void CrearLetrasyFiguras()
 	cuadradocafe->CreateMeshColor(vertices_cuadradocafe, 36);
 	meshColorList.push_back(cuadradocafe); // Cuadrado cafe */
 
+	GLfloat vertices_letraD[] = {
+		// X      Y      Z      R    G    B
+		-0.9f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.5f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.4f,  0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.4f,  0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.3f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.3f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.4f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.4f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.3f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.3f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.4f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.3f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.37f, -0.3f, 0.0f,  1.0f, 0.0f, 0.0f,
+	
+		-0.37f, -0.3f, 0.0f,  1.0f, 0.0f, 0.0f,
+		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.4f, -0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.4f, -0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.4f, -0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+	
+		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.9f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f
+	};
+
+	MeshColor* letraD = new MeshColor();
+	letraD->CreateMeshColor(vertices_letraD,static_cast<unsigned int>(sizeof(vertices_letraD) / sizeof(vertices_letraD[0])));
+	meshColorList.push_back(letraD);
+
 }
 
 
@@ -239,8 +310,17 @@ int main()
 		uniformProjection = shaderList[1].getProjectLocation();
 		
 		//Inicializar matriz de dimensión 4x4 que servirá como matriz de modelo para almacenar las transformaciones geométricas
-		/*
+
 		model = glm::mat4(1.0);
+		model = glm::mat4(1.0);
+		model = glm::scale(model, glm::vec3(0.90f, 1.30f, 1.0f)); // Tamaño
+		model = glm::translate(model, glm::vec3(0.0f, -0.0f, -1.0f)); // Posición
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+		meshColorList[1]->RenderMeshColor();
+		
+		/*
+  		model = glm::mat4(1.0);
 		model = glm::scale(model, glm::vec3(0.24f, 0.35f, 1.0f)); // Tamaño
 		model = glm::translate(model, glm::vec3(-3.0f, -1.25f, -4.0f)); // Posición
 		//
@@ -325,7 +405,7 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));//FALSE ES PARA QUE NO SEA TRANSPUESTA
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		meshList[1]->RenderMesh();
-		*/ */
+		*/
 		glUseProgram(0);
 		mainWindow.swapBuffers();
 
@@ -350,3 +430,4 @@ model = glm::rotate(model, glm::radians(angulo), glm::vec3(0.0f, 1.0f, 0.0f));
 model = glm::translate(model, glm::vec3(valor, 0.0f, 0.0f));
 
 */
+
