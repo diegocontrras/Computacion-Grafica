@@ -383,7 +383,7 @@ int main()
 		model = glm::mat4(1.0);
 		model = glm::mat4(1.0);
 		model = glm::scale(model, glm::vec3(0.90f, 1.30f, 1.0f)); // Tamaño
-		model = glm::translate(model, glm::vec3(0.5f, -0.0f, -1.0f)); // Posición
+		model = glm::translate(model, glm::vec3(0.0001f, -0.0f, -1.0f)); // Posición
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		meshColorList[2]->RenderMeshColor();
@@ -499,5 +499,6 @@ model = glm::rotate(model, glm::radians(angulo), glm::vec3(0.0f, 1.0f, 0.0f));
 model = glm::translate(model, glm::vec3(valor, 0.0f, 0.0f));
 
 */
+
 
 
