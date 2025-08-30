@@ -195,73 +195,73 @@ void CrearLetrasyFiguras()
 		-0.9f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.5f,  0.6f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.4f,  0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.4f,  0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.3f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.3f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.4f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.5f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.4f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.3f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.3f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.4f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.3f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.37f, -0.3f, 0.0f,  1.0f, 0.0f, 0.0f,
-	
+
 		-0.37f, -0.3f, 0.0f,  1.0f, 0.0f, 0.0f,
 		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.4f, -0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.5f,  0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.4f, -0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.4f, -0.4f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.6f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
-	
+
 		-0.6f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f, -0.3f, 0.0f,   1.0f, 0.0f, 0.0f,
 		-0.9f,  0.2f, 0.0f,   1.0f, 0.0f, 0.0f
 	};
 
 	MeshColor* letraD = new MeshColor();
-	letraD->CreateMeshColor(vertices_letraD,static_cast<unsigned int>(sizeof(vertices_letraD) / sizeof(vertices_letraD[0])));
+	letraD->CreateMeshColor(vertices_letraD, static_cast<unsigned int>(sizeof(vertices_letraD) / sizeof(vertices_letraD[0])));
 	meshColorList.push_back(letraD);
 
-		GLfloat vertices_letraA[] = {
+	GLfloat vertices_letraA[] = {
 		// X       Y       Z       R     G     B
 		-0.2f,  0.0f,  0.0f,    0.0f, 1.0f, 0.0f,
 		-0.1f,  0.5f,  0.0f,    0.0f, 1.0f, 0.0f,
@@ -316,12 +316,56 @@ void CrearLetrasyFiguras()
 		 0.0f, -0.5f,  0.0f,    0.0f, 1.0f, 0.0f,
 	};
 
-
-
 	MeshColor* letraA = new MeshColor();
 	letraA->CreateMeshColor(vertices_letraA, static_cast<unsigned int>(sizeof(vertices_letraA) / sizeof(vertices_letraA[0])));
 	meshColorList.push_back(letraA);
 
+	GLfloat vertices_letraC[] = {
+		// X      Y      Z       R     G     B
+		 0.9f,  0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f,  0.2f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f,  0.6f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.8f,  0.6f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f,  0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f,  0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.7f,  0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f,  0.6f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f,  0.6f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.6f,  0.2f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f,  0.0f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f,  0.6f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.6f,  0.2f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.6f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f,  0.0f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.6f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f,  0.0f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.6f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.8f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.7f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.8f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.8f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.9f, -0.4f, 0.0f,   0.0f, 0.0f, 1.0f,
+
+		 0.8f, -0.3f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.9f, -0.4f, 0.0f,   0.0f, 0.0f, 1.0f,
+		 0.9f, -0.2f, 0.0f,   0.0f, 0.0f, 1.0f,
+	};
+
+	MeshColor* letraC = new MeshColor();
+	letraC->CreateMeshColor(vertices_letraC, static_cast<unsigned int>(sizeof(vertices_letraC) / sizeof(vertices_letraC[0])));
+	meshColorList.push_back(letraC);
 }
 
 
@@ -387,6 +431,14 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		meshColorList[2]->RenderMeshColor();
+
+		model = glm::mat4(1.0);
+		model = glm::mat4(1.0);
+		model = glm::scale(model, glm::vec3(0.90f, 1.30f, 1.0f)); // Tamaño
+		model = glm::translate(model, glm::vec3(0.002f, -0.0f, -1.0f)); // Posición
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+		meshColorList[3]->RenderMeshColor();
 		
 		/*
   		model = glm::mat4(1.0);
@@ -499,6 +551,7 @@ model = glm::rotate(model, glm::radians(angulo), glm::vec3(0.0f, 1.0f, 0.0f));
 model = glm::translate(model, glm::vec3(valor, 0.0f, 0.0f));
 
 */
+
 
 
 
