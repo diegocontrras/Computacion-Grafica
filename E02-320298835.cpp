@@ -25,6 +25,11 @@ static const char* fShader = "shaders/shader.frag";
 static const char* vShaderColor = "shaders/shadercolor.vert";
 static const char* fShaderColor = "shaders/shadercolor.frag";
 //shaders nuevos se crearían acá
+static const char* vShaderVerde = "shaders/shaderverde.vert";
+static const char* vShaderVerdeOscuro = "shaders/shaderverdeoscuro.vert";
+static const char* vShaderAzul = "shaders/shaderazul.vert";
+static const char* vShaderRojo = "shaders/shaderrojo.vert";
+static const char* vShaderCafe = "shaders/shadercafe.vert";
 
 float angulo = 0.0f;
 
@@ -594,6 +599,7 @@ model = glm::rotate(model, glm::radians(angulo), glm::vec3(0.0f, 1.0f, 0.0f));
 model = glm::translate(model, glm::vec3(valor, 0.0f, 0.0f));
 
 */
+
 
 
 
