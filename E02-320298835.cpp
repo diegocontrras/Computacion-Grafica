@@ -377,13 +377,34 @@ void CrearLetrasyFiguras()
 void CreateShaders()
 {
 
-	Shader *shader1 = new Shader(); //shader para usar índices: objetos: cubo y  pirámide
+	Shader* shader1 = new Shader(); //shader para usar índices: objetos: cubo y  pirámide
 	shader1->CreateFromFiles(vShader, fShader);
 	shaderList.push_back(*shader1);
 
-	Shader *shader2 = new Shader();//shader para usar color como parte del VAO: letras 
+	Shader* shader2 = new Shader();//shader para usar color como parte del VAO: letras 
 	shader2->CreateFromFiles(vShaderColor, fShaderColor);
 	shaderList.push_back(*shader2);
+
+	Shader* shader3 = new Shader();
+	shader3->CreateFromFiles(vShaderVerde, fShaderColor);
+	shaderList.push_back(*shader3);
+
+	Shader* shader4 = new Shader();
+	shader4->CreateFromFiles(vShaderVerdeOscuro, fShaderColor);
+	shaderList.push_back(*shader4);
+
+	Shader* shader5 = new Shader();
+	shader5->CreateFromFiles(vShaderAzul, fShaderColor);
+	shaderList.push_back(*shader5);
+
+	Shader* shader6 = new Shader();
+	shader6->CreateFromFiles(vShaderCafe, fShaderColor);
+	shaderList.push_back(*shader6);
+
+	Shader* shader7 = new Shader();
+	shader7->CreateFromFiles(vShaderRojo, fShaderColor);
+	shaderList.push_back(*shader7);
+
 }
 
 
@@ -599,6 +620,7 @@ model = glm::rotate(model, glm::radians(angulo), glm::vec3(0.0f, 1.0f, 0.0f));
 model = glm::translate(model, glm::vec3(valor, 0.0f, 0.0f));
 
 */
+
 
 
 
