@@ -540,23 +540,31 @@ int main()
 		*/
 
 		// Figuras 3D
-		shaderList[0].useShader();
+		// Casa
+		shaderList[6].useShader();
 		uniformModel = shaderList[0].getModelLocation();
 		uniformProjection = shaderList[0].getProjectLocation();
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
-		// Casa
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -0.20f, -3.0f));
 		model = glm::scale(model, glm::vec3(0.7f, 0.7f, 0.8f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		meshList[1]->RenderMesh();
 		// Techo
+		shaderList[4].useShader();
+		uniformModel = shaderList[0].getModelLocation();
+		uniformProjection = shaderList[0].getProjectLocation();
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.46f, -3.0f));
 		model = glm::scale(model, glm::vec3(0.9f, 0.6f, 0.9f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		meshList[0]->RenderMesh();
 		// Puerta
+		shaderList[2].useShader();
+		uniformModel = shaderList[0].getModelLocation();
+		uniformProjection = shaderList[0].getProjectLocation();
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -0.43f, -2.6f));
 		model = glm::scale(model, glm::vec3(0.20f, 0.25f, 0.05f));
@@ -574,24 +582,38 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		meshList[1]->RenderMesh();
 		// Tronco
+		shaderList[5].useShader();
+		uniformModel = shaderList[0].getModelLocation();
+		uniformProjection = shaderList[0].getProjectLocation();
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.75f, -0.45f, -2.9f));
 		model = glm::scale(model, glm::vec3(0.10f, 0.25f, 0.10f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		meshList[1]->RenderMesh();
 		// Árbol
+		shaderList[3].useShader();
+		uniformModel = shaderList[0].getModelLocation();
+		uniformProjection = shaderList[0].getProjectLocation();
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.75f, -0.02f, -2.9f));
 		model = glm::scale(model, glm::vec3(0.40f, 0.58f, 0.40f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		meshList[0]->RenderMesh();
 		// Tronco
+		shaderList[5].useShader();
+		uniformModel = shaderList[0].getModelLocation();
+		uniformProjection = shaderList[0].getProjectLocation();
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.75f, -0.45f, -2.9f));
 		model = glm::scale(model, glm::vec3(0.10f, 0.25f, 0.10f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		meshList[1]->RenderMesh();
 		// Árbol
+		shaderList[3].useShader();
+		uniformModel = shaderList[0].getModelLocation();
+		uniformProjection = shaderList[0].getProjectLocation();
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.75f, -0.02f, -2.9f));
 		model = glm::scale(model, glm::vec3(0.40f, 0.58f, 0.40f));
@@ -620,10 +642,3 @@ model = glm::rotate(model, glm::radians(angulo), glm::vec3(0.0f, 1.0f, 0.0f));
 model = glm::translate(model, glm::vec3(valor, 0.0f, 0.0f));
 
 */
-
-
-
-
-
-
-
