@@ -93,10 +93,10 @@ void CrearPiramideTriangular()
 
 	};
 	GLfloat vertices_piramide_triangular[] = {
-		-0.5f, -0.5f,0.0f,	//0
-		0.5f,-0.5f,0.0f,	//1
-		0.0f,0.5f, -0.25f,	//2
-		0.0f,-0.5f,-0.5f,	//3
+		-0.5f,-0.5f,-0.433f,	//0
+		0.5f,-0.5f,-0.433f,		//1
+		0.0f,0.316f,-0.15f,		//2
+		0.0f,-0.5f,0.433f,		  //3
 
 	};
 	Mesh* obj1 = new Mesh();
@@ -693,4 +693,5 @@ int main()
 	
 
 		
+
 
