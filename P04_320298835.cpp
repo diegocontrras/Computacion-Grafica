@@ -477,8 +477,24 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color)); //para cambiar el color del objetos
 		meshList[0]->RenderMesh(); //dibuja cubo y pirámide triangular
 
+		// Ejercicio 
+		// Terminar grúa
+
+		// Base
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, 4.0f, -4.0));
+		modelaux = model;
+		model = glm::scale(model, glm::vec3(5.0f, 3.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
+		glm::vec3 color = glm::vec3(1.0f, 0.0f, 0.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		meshList[4]->RenderMesh();
+
 		glUseProgram(0);
 		mainWindow.swapBuffers();
 	}
 	return 0;
 }
+
