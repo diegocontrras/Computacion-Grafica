@@ -456,21 +456,23 @@ int main()
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion4()), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		sp.render();
-
+		
 		// Canasta
-
+		
 		//para reiniciar la matriz de modelo con valor de la matriz identidad
 		//Comentar y se modifica para agregar la jerarquia:
 		//usar una matriz temporal o auxiliar
 		//model = glm::mat4(1.0);
-		model = glm::rotate(model, glm::radians(25.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::translate(model, glm::vec3(0.f, -2.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.f, 0.0f, 0.0f));
 		//Traslación inicial para posicionar en -Z a los objetos
 		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, -4.0f));
 		//otras transformaciones para el objeto
 		modelaux = model;
 		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
+		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
 		//la línea de proyección solo se manda una vez a menos que en tiempo de ejecución
 		//se programe cambio entre proyección ortogonal y perspectiva
 		color = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -497,4 +499,5 @@ int main()
 	}
 	return 0;
 }
+
 
