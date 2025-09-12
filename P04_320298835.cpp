@@ -361,6 +361,8 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
+		color = glm::vec3(1.0f, 0.0f, 0.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		meshList[0]->RenderMesh();
 
 		//articulación
@@ -499,5 +501,6 @@ int main()
 	}
 	return 0;
 }
+
 
 
