@@ -24,6 +24,8 @@ Window::Window(GLint windowWidth, GLint windowHeight)
 	articulacion6 = 0.0f;
 	articulacion7 = 0.0f;
 	articulacion8 = 0.0f;
+	articulacion9 = 0.0f;
+	articulacion10 = 0.0f;
 	
 	for (size_t i = 0; i < 1024; i++)
 	{
@@ -32,10 +34,10 @@ Window::Window(GLint windowWidth, GLint windowHeight)
 }
 int Window::Initialise()
 {
-	//Inicialización de GLFW
+	//InicializaciÃ³n de GLFW
 	if (!glfwInit())
 	{
-		printf("Falló inicializar GLFW");
+		printf("FallÃ³ inicializar GLFW");
 		glfwTerminate();
 		return 1;
 	}
@@ -47,7 +49,7 @@ int Window::Initialise()
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 	//CREAR VENTANA
-	mainWindow = glfwCreateWindow(width, height, "Practica 04: Modelo Jerárquico", NULL, NULL);
+	mainWindow = glfwCreateWindow(width, height, "Practica 04: Modelo JerÃ¡rquico", NULL, NULL);
 
 	if (!mainWindow)
 	{
@@ -55,7 +57,7 @@ int Window::Initialise()
 		glfwTerminate();
 		return 1;
 	}
-	//Obtener tamaño de Buffer
+	//Obtener tamaÃ±o de Buffer
 	glfwGetFramebufferSize(mainWindow, &bufferWidth, &bufferHeight);
 
 	//asignar el contexto
@@ -70,7 +72,7 @@ int Window::Initialise()
 
 	if (glewInit() != GLEW_OK)
 	{
-		printf("Falló inicialización de GLEW");
+		printf("FallÃ³ inicializaciÃ³n de GLEW");
 		glfwDestroyWindow(mainWindow);
 		glfwTerminate();
 		return 1;
@@ -81,7 +83,7 @@ int Window::Initialise()
 							 
 							 //Asignar Viewport
 	glViewport(0, 0, bufferWidth, bufferHeight);
-	//Callback para detectar que se está usando la ventana
+	//Callback para detectar que se estÃ¡ usando la ventana
 	glfwSetWindowUserPointer(mainWindow, this);
 }
 
@@ -161,6 +163,16 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 	if (key == GLFW_KEY_B)
 	{
 		theWindow->articulacion8 += 10.0;
+	}
+
+	if (key == GLFW_KEY_X)
+	{
+		theWindow->articulacion9 += 10.0;
+	}
+
+	if (key == GLFW_KEY_Z)
+	{
+		theWindow->articulacion10 += 10.0;
 	}
 
 	if (key == GLFW_KEY_D && action == GLFW_PRESS)
