@@ -267,6 +267,38 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		sp.render();
 
+		// Articulaciones cofre
+
+		model = modelaux2;
+		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f)); // posición articulación
+		model = glm::scale(model, glm::vec3(0.7f));
+		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion3()), glm::vec3(1.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		color = glm::vec3(1.0f, 1.0f, 1.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		sp.render();
+		
+		model = modelaux2;
+		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f)); // posición articulación
+		model = glm::scale(model, glm::vec3(0.7f));
+		model = glm::rotate(model, glm::radians(-mainWindow.getarticulacion4()), glm::vec3(1.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		color = glm::vec3(1.0f, 1.0f, 1.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		sp.render();
+		
+		// ==================== Cofre ====================
+		
+		model = modelaux2;
+		model = glm::translate(model, glm::vec3(-34.0f, -6.0f, 5.0f));
+		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion3()), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(-mainWindow.getarticulacion4()), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(0.8f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		color = glm::vec3(1.0f, 0.0f, 0.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		Cofre.RenderModel();
+
 		glUseProgram(0);
 
 		mainWindow.swapBuffers();
@@ -274,4 +306,5 @@ int main()
 
 	return 0;
 }
+
 
