@@ -1,5 +1,5 @@
 /*
-Pr·ctica 5: OptimizaciÛn y Carga de Modelos
+Pr√°ctica 5: Optimizaci√≥n y Carga de Modelos
 */
 //para cargar imagen
 #define STB_IMAGE_IMPLEMENTATION
@@ -191,7 +191,7 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		meshList[2]->RenderMesh();
 
-		//------------*INICIA DIBUJO DE NUESTROS DEM¡S OBJETOS-------------------*
+		//------------*INICIA DIBUJO DE NUESTROS DEM√ÅS OBJETOS-------------------*
 		color = glm::vec3(0.0f, 0.0f, 1.0f);
 		
 		model = glm::mat4(1.0);
@@ -201,16 +201,16 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Vocho.RenderModel();//modificar por el modelo sin las 4 patas y sin cola
 		color = glm::vec3(0.0f, 0.0f, 1.0f);
-		//En sesiÛn se separara una parte del modelo de Goddard y se unir· por jeraquÌa al cuerpo
+		//En sesi√≥n se separara una parte del modelo de Goddard y se unir√° por jeraqu√≠a al cuerpo
 		modelaux = model;
 		modelaux2 = model;
 		modelaux3 = model;
 		modelaux4 = model;
 		
-		// ArticulaciÛn llantas
+		// Articulaci√≥n llantas
 		
 		model = modelaux;
-		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f)); // posiciÛn articulaciÛn
+		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f)); // posici√≥n articulaci√≥n
 		model = glm::scale(model, glm::vec3(0.7f));
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion1()), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
@@ -222,6 +222,7 @@ int main()
 		model = modelaux;
 		model = glm::translate(model, glm::vec3(20.0f, -5.0f, 16.0f));
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion1()), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(-mainWindow.getarticulacion2()), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::scale(model, glm::vec3(0.7f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		color = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -232,6 +233,7 @@ int main()
 		model = modelaux;
 		model = glm::translate(model, glm::vec3(20.0f, -5.0f, -16.0f));
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion1()), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(-mainWindow.getarticulacion2()), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::scale(model, glm::vec3(0.7f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Llanta.RenderModel();
@@ -240,6 +242,7 @@ int main()
 		model = modelaux;
 		model = glm::translate(model, glm::vec3(-33.0f, -5.7f, -16.0f));
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion1()), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(-mainWindow.getarticulacion2()), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::scale(model, glm::vec3(0.7f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Llanta.RenderModel();
@@ -248,12 +251,21 @@ int main()
 		model = modelaux;
 		model = glm::translate(model, glm::vec3(-33.0f, -5.7f, 16.0f));
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion1()), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(-mainWindow.getarticulacion2()), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::scale(model, glm::vec3(0.7f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Llanta.RenderModel();
 
-		// articulaciÛn para movimiento hacia atr·s
+		// articulaci√≥n para movimiento hacia atr√°s
 
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f)); // posici√≥n articulaci√≥n
+		model = glm::scale(model, glm::vec3(0.7f));
+		model = glm::rotate(model, glm::radians(-mainWindow.getarticulacion2()), glm::vec3(1.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		color = glm::vec3(1.0f, 1.0f, 1.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		sp.render();
 
 		glUseProgram(0);
 
@@ -262,3 +274,4 @@ int main()
 
 	return 0;
 }
+
