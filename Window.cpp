@@ -49,7 +49,7 @@ int Window::Initialise()
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 	//CREAR VENTANA
-	mainWindow = glfwCreateWindow(width, height, "Practica 04: Modelo Jerárquico", NULL, NULL);
+	mainWindow = glfwCreateWindow(width, height, "Practica 05: Optimización y Carga de Modelos", NULL, NULL);
 
 	if (!mainWindow)
 	{
@@ -223,4 +223,5 @@ Window::~Window()
 	glfwTerminate();
 
 }
+
 
