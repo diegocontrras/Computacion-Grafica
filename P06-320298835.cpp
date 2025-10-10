@@ -1,5 +1,5 @@
 /*
-Práctica 6: Texturizado
+PrÃ¡ctica 6: Texturizado
 */
 //para cargar imagen
 #define STB_IMAGE_IMPLEMENTATION
@@ -65,7 +65,7 @@ static const char* fShader = "shaders/shader_texture.frag";
 
 
 
-//cálculo del promedio de las normales para sombreado de Phong
+//cÃ¡lculo del promedio de las normales para sombreado de Phong
 void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat* vertices, unsigned int verticeCount,
 	unsigned int vLength, unsigned int normalOffset)
 {
@@ -324,7 +324,7 @@ int main()
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
 		glUniform3f(uniformEyePosition, camera.getCameraPosition().x, camera.getCameraPosition().y, camera.getCameraPosition().z);
 
-		color = glm::vec3(1.0f, 1.0f, 1.0f);//color blanco, multiplica a la información de color de la textura
+		color = glm::vec3(1.0f, 1.0f, 1.0f);//color blanco, multiplica a la informaciÃ³n de color de la textura
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
@@ -356,11 +356,11 @@ int main()
 
 
 
-		/*Reporte de práctica :
-		Ejercicio 1: Crear un dado de 8 caras y texturizarlo por medio de código
+		/*Reporte de prÃ¡ctica :
+		Ejercicio 1: Crear un dado de 8 caras y texturizarlo por medio de cÃ³digo
 		Ejercicio 2: Importar el modelo de su coche con sus 4 llantas acomodadas
 		y tener texturizadas las 4 llantas (diferenciar caucho y rin)  y
-		texturizar el logo de la Facultad de ingeniería en el cofre de su propio modelo de coche
+		texturizar el logo de la Facultad de ingenierÃ­a en el cofre de su propio modelo de coche
 
 		*/
 		//Instancia del coche 
