@@ -176,76 +176,75 @@ void CreateShaders()
 void CrearDado()
 {
 	unsigned int cubo_indices[] = {
-		// front
 		0, 1, 2,
-		2, 3, 0,
-
-		// back
-		8, 9, 10,
-		10, 11, 8,
-
-		// left
+		3, 4, 5,
+		6, 7, 8,
+		9, 10, 11,
 		12, 13, 14,
-		14, 15, 12,
-		// bottom
-		16, 17, 18,
-		18, 19, 16,
-		// top
-		20, 21, 22,
-		22, 23, 20,
-
-		// right
-		4, 5, 6,
-		6, 7, 4,
-
+		15, 16, 17,
+		18, 19, 20,
+		21, 22, 23
 	};
+
 	//Ejercicio 1: reemplazar con sus dados de 6 caras texturizados, agregar normales
-// average normals
+	// average normals
+	
 	GLfloat cubo_vertices[] = {
-		// front
-		//x		y		z		S		T			NX		NY		NZ
-		-0.5f, -0.5f,  0.5f,	0.26f,  0.34f,		0.0f,	0.0f,	-1.0f,	//0
-		0.5f, -0.5f,  0.5f,		0.49f,	0.34f,		0.0f,	0.0f,	-1.0f,	//1
-		0.5f,  0.5f,  0.5f,		0.49f,	0.66f,		0.0f,	0.0f,	-1.0f,	//2
-		-0.5f,  0.5f,  0.5f,	0.26f,	0.66f,		0.0f,	0.0f,	-1.0f,	//3
-		// right
-		//x		y		z		S		T
-		0.5f, -0.5f,  0.5f,	    0.0f,  0.34f,		-1.0f,	0.0f,	0.0f,
-		0.5f, -0.5f,  -0.5f,	0.25f,	0.34f,		-1.0f,	0.0f,	0.0f,
-		0.5f,  0.5f,  -0.5f,	0.25f,	0.66f,		-1.0f,	0.0f,	0.0f,
-		0.5f,  0.5f,  0.5f,	    0.0f,	0.66f,		-1.0f,	0.0f,	0.0f,
-		// back
-		-0.5f, -0.5f, -0.5f,	0.75f, 0.34f,		0.0f,	0.0f,	1.0f,
-		 0.5f, -0.5f, -0.5f,	0.5f,  0.34f,		0.0f,	0.0f,	1.0f,
-		 0.5f,  0.5f, -0.5f,	0.5f,  0.66f,		0.0f,	0.0f,	1.0f,
-		-0.5f,  0.5f, -0.5f,	0.75f, 0.66f,		0.0f,	0.0f,	1.0f,
-		// left
-		//x		y		z		S		T
-		-0.5f, -0.5f,  -0.5f,	0.75f,  0.34f,		1.0f,	0.0f,	0.0f,
-		-0.5f, -0.5f,  0.5f,	1.0f,	0.34f,		1.0f,	0.0f,	0.0f,
-		-0.5f,  0.5f,  0.5f,	1.0f,	0.66f,		1.0f,	0.0f,	0.0f,
-		-0.5f,  0.5f,  -0.5f,	0.75f,	0.66f,		1.0f,	0.0f,	0.0f,
-		// bottom
-		//x		y		z		S		T		
-		-0.5f, -0.5f,  0.5f,	0.5f,  0.34f,	1.0f, 0.0f, 0.0f,
-		 0.5f, -0.5f,  0.5f,	0.75f, 0.34f,	1.0f, 0.0f, 0.0f,
-		 0.5f, -0.5f, -0.5f,	0.75f, 0.0f,	1.0f, 0.0f, 0.0f,
-		-0.5f, -0.5f, -0.5f,	0.5f,  0.0f,	1.0f, 0.0f, 0.0f,
-		//UP
-		 //x		y		z		S		T
-		 -0.5f, 0.5f,  0.5f,	0.5f,  0.66f,		0.0f,	-1.0f,	0.0f,
-		 0.5f,  0.5f,  0.5f,	0.75f,	0.66f,		0.0f,	-1.0f,	0.0f,
-		  0.5f, 0.5f,  -0.5f,	0.75f,	1.0f,		0.0f,	-1.0f,	0.0f,
-		 -0.5f, 0.5f,  -0.5f,	0.5f,	1.0f,		0.0f,	-1.0f,	0.0f,
+		// Cara 1 – superior frontal derecha
+		//x		y		z	S		T		NX		NY		NZ
+		0.0f,  1.0f,  0.0f,  0.3f,  0.34f,   0.0f,   1.0f,  0.0f,   // Vértice 1
+		1.0f,  0.0f,  0.0f,  0.5f,  0.66f,   0.0f,   1.0f,  0.0f,   // Vértice 2
+		0.0f,  0.0f,  1.0f,  0.7f,  0.34f,   0.0f,   1.0f,  0.0f,   // Vértice 3
+		
+		// Cara 2 – superior derecha trasera
+		//x		y		z	S		T		
+		0.0f,  1.0f,  0.0f,	0.5f, 1.0f,		0.58f,  0.58f, -0.58f,
+		1.0f,  0.0f,  0.0f,	0.0f, 0.0f,		0.58f,  0.58f, -0.58f,
+		0.0f,  0.0f, -1.0f,	1.0f, 0.0f,		0.58f,  0.58f, -0.58f,
+
+		// Cara 3 – superior trasera izquierda
+		//x		y		z	S		T
+		0.0f,  1.0f,  0.0f,	0.5f, 1.0f,	   -0.58f,  0.58f, -0.58f,
+		0.0f,  0.0f, -1.0f,	0.0f, 0.0f,	   -0.58f,  0.58f, -0.58f,
+		-1.0f,  0.0f,  0.0f,	1.0f, 0.0f,	   -0.58f,  0.58f, -0.58f,
+
+		 // Cara 4 – superior izquierda frontal
+		//x		y		z	S		T
+		 0.0f,  1.0f,  0.0f,	0.5f, 1.0f,	   -0.58f,  0.58f,  0.58f,
+		 -1.0f,  0.0f,  0.0f,	0.0f, 0.0f,	   -0.58f,  0.58f,  0.58f,
+		 0.0f,  0.0f,  1.0f,	1.0f, 0.0f,	   -0.58f,  0.58f,  0.58f,
+		 
+		 // Cara 5 – inferior frontal derecha
+		//x		y		z	S		T
+		0.0f, -1.0f,  0.0f,	0.5f, 1.0f,		0.58f, -0.58f,  0.58f,
+		1.0f,  0.0f,  0.0f,	0.0f, 0.0f,		0.58f, -0.58f,  0.58f,
+		0.0f,  0.0f,  1.0f,	1.0f, 0.0f,		0.58f, -0.58f,  0.58f,
+		
+		// Cara 6 – inferior derecha trasera
+		//x		y		z	S		T
+		0.0f, -1.0f,  0.0f,	0.5f, 1.0f,		0.58f, -0.58f, -0.58f,
+		0.0f,  0.0f, -1.0f,	0.0f, 0.0f,		0.58f, -0.58f, -0.58f,
+		1.0f,  0.0f,  0.0f,	1.0f, 0.0f,		0.58f, -0.58f, -0.58f,
+
+		// Cara 7 – inferior trasera izquierda
+		//x		y		z	S		T
+		0.0f, -1.0f,  0.0f,	0.5f, 1.0f,	   -0.58f, -0.58f, -0.58f,
+		-1.0f,  0.0f,  0.0f,	0.0f, 0.0f,	   -0.58f, -0.58f, -0.58f,
+		0.0f,  0.0f, -1.0f,	1.0f, 0.0f,	   -0.58f, -0.58f, -0.58f,
+
+		// Cara 8 – inferior izquierda frontal
+		//x		y		z	S		T
+		0.0f, -1.0f,  0.0f,	0.5f, 1.0f,	   -0.58f, -0.58f,  0.58f,
+		0.0f,  0.0f,  1.0f,	0.0f, 0.0f,	   -0.58f, -0.58f,  0.58f,
+		-1.0f,  0.0f,  0.0f,	1.0f, 0.0f,	   -0.58f, -0.58f,  0.58f,
 	};
+
 
 	Mesh* dado = new Mesh();
 	dado->CreateMesh(cubo_vertices, cubo_indices, 192, 36);
 	meshList.push_back(dado);
 
 }
-
-
 
 int main()
 {
@@ -421,3 +420,4 @@ int main()
 		FIGURA A RENDERIZAR de OpenGL, si es modelo importado no se declara UseTexture
 		glDisable(GL_BLEND);
 */
+
