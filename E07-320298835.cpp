@@ -1,5 +1,5 @@
 /*
-Práctica 7: Iluminación 1 
+PrÃ¡ctica 7: IluminaciÃ³n 1 
 */
 //para cargar imagen
 #define STB_IMAGE_IMPLEMENTATION
@@ -28,7 +28,7 @@ Práctica 7: Iluminación 1
 #include"Model.h"
 #include "Skybox.h"
 
-//para iluminación
+//para iluminaciÃ³n
 #include "CommonValues.h"
 #include "DirectionalLight.h"
 #include "PointLight.h"
@@ -80,7 +80,7 @@ static const char* vShader = "shaders/shader_light.vert";
 static const char* fShader = "shaders/shader_light.frag";
 
 
-//función de calculo de normales por promedio de vértices 
+//funciÃ³n de calculo de normales por promedio de vÃ©rtices 
 void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat* vertices, unsigned int verticeCount,
 	unsigned int vLength, unsigned int normalOffset)
 {
@@ -239,13 +239,13 @@ int main()
 	Material_opaco = Material(0.3f, 4);
 
 
-	//luz direccional, sólo 1 y siempre debe de existir
+	//luz direccional, sÃ³lo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
 		0.3f, 0.3f,
 		0.0f, 0.0f, -1.0f);
 	//contador de luces puntuales
 	unsigned int pointLightCount = 0;
-	//Declaración de primer luz puntual
+	//DeclaraciÃ³n de primer luz puntual
 	pointLights[0] = PointLight(1.0f, 0.0f, 0.0f,
 		0.0f, 1.0f,
 		-6.0f, 1.5f, 1.5f,
@@ -262,12 +262,21 @@ int main()
 		5.0f);
 	spotLightCount++;
 	
-	//se crean mas luces puntuales y spotlight 
-			//luz Faro
+		//se crean mas luces puntuales y spotlight 
+	//Luz Faro
 	spotLights[1] = SpotLight(0.0f, 0.0f, 1.0f,
 		1.0f, 2.0f,
-		2.0f, 6.0f, -12.0f,
+		0.0f, 0.0f, 0.0f,
 		-5.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f,
+		15.0f);
+	spotLightCount++;
+
+	// Luz Helicoptero
+	spotLights[2] = SpotLight(1.0f, 1.0f, 0.0f,
+		1.0f, 4.0f,
+		-30.0f, 5.0f, 6.0f,    
+		0.0f, -5.0f, 0.0f,    
 		1.0f, 0.0f, 0.0f,
 		15.0f);
 	spotLightCount++;
@@ -300,7 +309,7 @@ int main()
 		uniformEyePosition = shaderList[0].GetEyePositionLocation();
 		uniformColor = shaderList[0].getColorLocation();
 		
-		//información en el shader de intensidad especular y brillo
+		//informaciÃ³n en el shader de intensidad especular y brillo
 		uniformSpecularIntensity = shaderList[0].GetSpecularIntensityLocation();
 		uniformShininess = shaderList[0].GetShininessLocation();
 
@@ -308,13 +317,13 @@ int main()
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
 		glUniform3f(uniformEyePosition, camera.getCameraPosition().x, camera.getCameraPosition().y, camera.getCameraPosition().z);
 
-		// luz ligada a la cámara de tipo flash
-		//sirve para que en tiempo de ejecución (dentro del while) se cambien propiedades de la luz
+		// luz ligada a la cÃ¡mara de tipo flash
+		//sirve para que en tiempo de ejecuciÃ³n (dentro del while) se cambien propiedades de la luz
 			glm::vec3 lowerLight = camera.getCameraPosition();
 		lowerLight.y -= 0.3f;
 		spotLights[0].SetFlash(lowerLight, camera.getCameraDirection());
 
-		//información al shader de fuentes de iluminación
+		//informaciÃ³n al shader de fuentes de iluminaciÃ³n
 		shaderList[0].SetDirectionalLight(&mainLight);
 		shaderList[0].SetPointLights(pointLights, pointLightCount);
 		shaderList[0].SetSpotLights(spotLights, spotLightCount);
@@ -348,16 +357,7 @@ int main()
 		// Funcionamiento de faro
 		glm::vec3 posBasefaro(2.0f, 6.0f, -12.0f);
 		glm::vec3 posfaro = posBasefaro + glm::vec3(0.0f + mainWindow.getmuevex(), 0.0f, 0.0);
-
-		// Luz del faro
-		spotLights[1] = SpotLight(
-			0.0f, 0.0f, 1.0f,
-			1.0f, 2.0f,
-			posfaro.x, posfaro.y, posfaro.z, 
-			-5.0f, 0.0f, 0.0f,
-			1.0f, 0.0f, 0.0f,
-			15.0f
-		);
+		spotLights[1].SetPos(posfaro);
 
 		//Llanta delantera izquierda
 		model = modelaux;
@@ -392,6 +392,7 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Llanta_V.RenderModel();
 	
+		// Ejercicio 1
 		// Instancia de helicoptero
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f + mainWindow.getmuevey(), 5.0f, 6.0));
@@ -401,7 +402,12 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Blackhawk_M.RenderModel();
 
-		//Agave ¿qué sucede si lo renderizan antes del coche y el helicóptero?
+		// Ejercicio 2
+		glm::vec3 posBaseHeli(0.0f, 5.0f, 6.0f);
+		glm::vec3 posHeli = posBaseHeli + glm::vec3(mainWindow.getmuevey(), 0.0f, 0.0f);
+		spotLights[2].SetPos(posHeli);
+
+		//Agave Â¿quÃ© sucede si lo renderizan antes del coche y el helicÃ³ptero?
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 1.0f, -4.0f));
 		model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
@@ -422,3 +428,4 @@ int main()
 
 	return 0;
 }
+
