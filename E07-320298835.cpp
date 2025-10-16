@@ -53,6 +53,7 @@ Model Llanta_M;
 Model Blackhawk_M;
 Model Vocho;
 Model Llanta_V;
+Model Lampara;
 
 
 Skybox skybox;
@@ -223,6 +224,8 @@ int main()
 	Vocho.LoadModel("Models/Vocho.fbx");
 	Llanta_V = Model();
 	Llanta_V.LoadModel("Models/Llanta.fbx");
+	Lampara = Model();
+	Lampara.LoadModel("Models/Lampara.fbx");
 	
 
 	std::vector<std::string> skyboxFaces;
@@ -277,6 +280,15 @@ int main()
 		1.0f, 4.0f,
 		-30.0f, 5.0f, 6.0f,    
 		0.0f, -5.0f, 0.0f,    
+		1.0f, 0.0f, 0.0f,
+		15.0f);
+	spotLightCount++;
+
+	// Luz Lámpara
+	spotLights[3] = SpotLight(1.0f, 1.0f, 1.0f,
+		1.0f, 4.0f,
+		0.0f, 20.0f, 0.0f,
+		0.0f, 10.0f, 0.0f,
 		1.0f, 0.0f, 0.0f,
 		15.0f);
 	spotLightCount++;
@@ -407,6 +419,20 @@ int main()
 		glm::vec3 posHeli = posBaseHeli + glm::vec3(mainWindow.getmuevey(), 0.0f, 0.0f);
 		spotLights[2].SetPos(posHeli);
 
+		// Ejercicio 3
+		// Lampara
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, 7.0f, 9.0));
+		model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Lampara.RenderModel();
+
+		glm::vec3 posBaseLamp(0.0f, 5.0f, 8.0f);
+		glm::vec3 posLamp = posBaseLamp + glm::vec3(0.0, 0.0f, 0.0f);
+		spotLights[3].SetPos(posLamp);
+
 		//Agave ¿qué sucede si lo renderizan antes del coche y el helicóptero?
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 1.0f, -4.0f));
@@ -428,4 +454,5 @@ int main()
 
 	return 0;
 }
+
 
