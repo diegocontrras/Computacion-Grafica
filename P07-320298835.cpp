@@ -285,14 +285,14 @@ int main()
 	spotLightCount++;
 
 	// Luz Lámpara
-	spotLights[3] = SpotLight(1.0f, 1.0f, 1.0f,
-		1.0f, 4.0f,
+	pointLights[1] = PointLight(
+		1.0f, 1.0f, 1.0f,
+		0.1f, 4.0f,
 		0.0f, 20.0f, 0.0f,
-		0.0f, 10.0f, 0.0f,
-		1.0f, 0.0f, 0.0f,
-		15.0f);
-	spotLightCount++;
-
+		1.0f, 0.0f, 0.0f 
+	);
+	pointLightCount++;
+	
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformEyePosition = 0,
 		uniformSpecularIntensity = 0, uniformShininess = 0;
 	GLuint uniformColor = 0;
@@ -431,7 +431,7 @@ int main()
 
 		glm::vec3 posBaseLamp(0.0f, 5.0f, 8.0f);
 		glm::vec3 posLamp = posBaseLamp + glm::vec3(0.0, 0.0f, 0.0f);
-		spotLights[3].SetPos(posLamp);
+		pointLights[1];
 
 		//Agave ¿qué sucede si lo renderizan antes del coche y el helicóptero?
 		model = glm::mat4(1.0);
@@ -454,5 +454,3 @@ int main()
 
 	return 0;
 }
-
-
