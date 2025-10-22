@@ -1,5 +1,5 @@
 /*
-Práctica 8: Iluminación 2
+PrÃ¡ctica 8: IluminaciÃ³n 2
 */
 //para cargar imagen
 #define STB_IMAGE_IMPLEMENTATION
@@ -28,7 +28,7 @@ Práctica 8: Iluminación 2
 #include"Model.h"
 #include "Skybox.h"
 
-//para iluminación
+//para iluminaciÃ³n
 #include "CommonValues.h"
 #include "DirectionalLight.h"
 #include "PointLight.h"
@@ -87,7 +87,7 @@ static const char* vShader = "shaders/shader_light.vert";
 static const char* fShader = "shaders/shader_light.frag";
 
 
-//función de calculo de normales por promedio de vértices 
+//funciÃ³n de calculo de normales por promedio de vÃ©rtices 
 void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat* vertices, unsigned int verticeCount,
 	unsigned int vLength, unsigned int normalOffset)
 {
@@ -116,7 +116,7 @@ void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat
 	}
 }
 
-Sphere sp = Sphere(1.0, 20, 20); // Para la rticulación del cofre
+Sphere sp = Sphere(1.0, 20, 20); // Para la rticulaciÃ³n del cofre
 
 void CreateObjects()
 {
@@ -214,49 +214,49 @@ void CrearDado()
 	// average normals
 
 	GLfloat cubo_vertices[] = {
-		// Número 1
+		// NÃºmero 1
 		//x		y		z	S		T			NX		NY		NZ
-		0.0f,  1.0f,  0.0f,  0.246f,  0.501f,   0.0f,   -1.0f,  -1.0f,   // Vértice 1
-		1.0f,  0.0f,  0.0f,  0.489f,  0.75f,   0.0f,   -1.0f,  -1.0f,   // Vértice 2
-		0.0f,  0.0f,  1.0f,  0.75f,  0.5f,		0.0f,   -1.0f,  -1.0f,   // Vértice 3
+		0.0f,  1.0f,  0.0f,  0.246f,  0.501f,   0.0f,   -1.0f,  -1.0f,   // VÃ©rtice 1
+		1.0f,  0.0f,  0.0f,  0.489f,  0.75f,   0.0f,   -1.0f,  -1.0f,   // VÃ©rtice 2
+		0.0f,  0.0f,  1.0f,  0.75f,  0.5f,		0.0f,   -1.0f,  -1.0f,   // VÃ©rtice 3
 
-		// Número 3
+		// NÃºmero 3
 		//x		y		z	S		T		
 		0.0f,  1.0f,  0.0f,	0.49f, 0.755f,		-0.58f,  0.0f, 0.0f,
 		1.0f,  0.0f,  0.0f,	0.0f, 0.75f,		-0.58f,  0.0f, 0.0f,
 		0.0f,  0.0f, -1.0f,	0.24f, 0.501f,		-0.58f,  0.0f, 0.0f,
 
-		// Número 2
+		// NÃºmero 2
 		//x		y		z	 S		T
 		0.0f,  1.0f,  0.0f,	 0.489f, 0.254f, 	   1.0f,  -1.0f, 0.0f,
 		0.0f,  0.0f, -1.0f,		 0.246f, 0.501f,   1.0f,  -1.0f, 0.0f,
 		-1.0f,  0.0f,  0.0f,   0.0f, 0.254f,		1.0f,  -1.0f, 0.0f,
 
-		// Número 4
+		// NÃºmero 4
 	   //x		y		z	S		T
 		0.0f,  1.0f,  0.0f,	0.246f, 0.501f,	   0.58f,  0.0f,  0.58f,
 		-1.0f,  0.0f,  0.0f,0.489f, 0.254f,	   0.58f,  0.0f,  0.58f,
 		0.0f,  0.0f,  1.0f,	0.75f, 0.5f,	   0.58f,  0.0f,  0.58f,
 
-		// Número 7
+		// NÃºmero 7
 	   //x		y		z	S		T
 	   0.0f, -1.0f,  0.0f,	0.75f, 0.5f,		0.0f, -1.0f,  -1.0f,
 	   1.0f,  0.0f,  0.0f,	1.0f, 0.75f,		0.0f, -1.0f,  -1.0f,
 	   0.0f,  0.0f,  1.0f,	0.489f, 0.75f,		0.0f, -1.0f,  -1.0f,
 
-	   // Número 5
+	   // NÃºmero 5
 	   //x		y		z	S		T
 	   0.0f, -1.0f,  0.0f,	0.498f, 0.75f,			-0.58f, 0.0f, 0.0f,
 	   0.0f,  0.0f, -1.0f,	1.0f, 0.75f, 			-0.58f, 0.0f, 0.0f,
 	   1.0f,  0.0f,  0.0f,		0.75f, 1.0f,		-0.58f, 0.0f, 0.0f,
 
-	   // Número 6 
+	   // NÃºmero 6 
 	   //x		y		z	S		T
 	   0.0f, -1.0f,  0.0f,	0.498f, 0.254f, 	   0.58f, 0.58f, -0.58f, // Pico
 	   -1.0f,  0.0f,  0.0f,	1.0f, 0.254f, 			0.58f, 0.58f, -0.58f,
 	   0.0f,  0.0f, -1.0f,	0.75f, 0.498f,			0.58f, 0.58f, -0.58f,
 
-	   // Número 8 – inferior izquierda frontal
+	   // NÃºmero 8 â€“ inferior izquierda frontal
 	   //x		y		z	S		T
 	   0.0f, -1.0f,  0.0f,	0.498f, 0.25f,	   0.58f, 0.0f,  0.58f,
 	   0.0f,  0.0f,  1.0f,	1.0f, 0.25f, 	   0.58f, 0.0f,  0.58f,
@@ -320,7 +320,7 @@ int main()
 	Material_opaco = Material(0.3f, 4);
 
 
-	//luz direccional, sólo 1 y siempre debe de existir
+	//luz direccional, sÃ³lo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
 		0.3f, 0.3f,
 		0.0f, 0.0f, -1.0f);
@@ -375,7 +375,7 @@ int main()
 	//contador de luces puntuales
 	unsigned int pointLightCount = 0;
 
-	//Declaración de primer arreglo de luces puntuales
+	//DeclaraciÃ³n de primer arreglo de luces puntuales
 	//verde
 	pointLights[0] = PointLight(0.0f, 1.0f, 0.0f,
 		0.7f, 0.7f,
@@ -383,7 +383,7 @@ int main()
 		0.3f, 0.3f, 0.3f);
 	pointLightCount++;
 
-	// Luz Lámpara
+	// Luz LÃ¡mpara
 	pointLights[1] = PointLight(0.0f, 0.0f, 1.0f,
 		0.1f, 4.0f,
 		0.0f, 20.0f, 0.0f,
@@ -436,7 +436,7 @@ int main()
 		uniformEyePosition = shaderList[0].GetEyePositionLocation();
 		uniformColor = shaderList[0].getColorLocation();
 
-		//información en el shader de intensidad especular y brillo
+		//informaciÃ³n en el shader de intensidad especular y brillo
 		uniformSpecularIntensity = shaderList[0].GetSpecularIntensityLocation();
 		uniformShininess = shaderList[0].GetShininessLocation();
 
@@ -444,13 +444,13 @@ int main()
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
 		glUniform3f(uniformEyePosition, camera.getCameraPosition().x, camera.getCameraPosition().y, camera.getCameraPosition().z);
 
-		// luz ligada a la cámara de tipo flash
-		//sirve para que en tiempo de ejecución (dentro del while) se cambien propiedades de la luz
+		// luz ligada a la cÃ¡mara de tipo flash
+		//sirve para que en tiempo de ejecuciÃ³n (dentro del while) se cambien propiedades de la luz
 		lowerLight = camera.getCameraPosition();
 		lowerLight.y -= 0.3f;
 		spotLights[0].SetFlash(lowerLight, camera.getCameraDirection());
 
-		//Función de apagar y prender
+		//FunciÃ³n de apagar y prender
 
 		unsigned int lucesPuntuales;
 
@@ -463,30 +463,37 @@ int main()
 			lucesPuntuales = pointLightCount - 1;
 		}
 
-		//información al shader de fuentes de iluminación
+		//informaciÃ³n al shader de fuentes de iluminaciÃ³n
 		shaderList[0].SetDirectionalLight(&mainLight);
 		shaderList[0].SetPointLights(pointLights, lucesPuntuales);
 		shaderList[0].SetSpotLights(spotLights, spotLightCount);
 
-		unsigned int lucesActivas = 0;
+		unsigned int luzfaroD;
 
-		// Faro delantero
 		if (mainWindow.getprendidaD())
 		{
-			spotLights[lucesActivas] = spotLights[3];
-			lucesActivas++;
+			luzfaroD = spotLightCount;
+		}
+		else
+		{
+			luzfaroD = spotLightCount - 1;
 		}
 
-		// Faro trasero
+		unsigned int luzfaroT;
+
 		if (mainWindow.getprendidaT())
 		{
-			spotLights[lucesActivas] = spotLights[4];
-			lucesActivas++;
+			luzfaroT = spotLightCount;
+		}
+		else
+		{
+			luzfaroT = spotLightCount - 1;
 		}
 
+		//informaciÃ³n al shader de fuentes de iluminaciÃ³n
 		shaderList[0].SetDirectionalLight(&mainLight);
 		shaderList[0].SetPointLights(pointLights, pointLightCount);
-		shaderList[0].SetSpotLights(spotLights, lucesActivas);
+		shaderList[0].SetSpotLights(spotLights, (luzfaroD, luzfaroT));
 
 		color = glm::vec3(1.0f, 1.0f, 1.0f);
 		model = glm::mat4(1.0);
@@ -566,7 +573,7 @@ int main()
 		float anguloCofre1 = glm::clamp(mainWindow.getarticulacion3(), 0.0f, 55.0f);
 		float anguloCofre2 = glm::clamp(mainWindow.getarticulacion4(), 0.0f, 55.0f);
 
-		// Articulación abierta
+		// ArticulaciÃ³n abierta
 		model = modelaux2;
 		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f));
 		model = glm::scale(model, glm::vec3(0.7f));
@@ -576,7 +583,7 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		sp.render();
 
-		// Articulación cerrada
+		// ArticulaciÃ³n cerrada
 		model = modelaux2;
 		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f));
 		model = glm::scale(model, glm::vec3(0.7f));
@@ -601,10 +608,8 @@ int main()
 		glm::vec3 posBaseCofre(20.0f, 0.0f, -6.0f);
 		glm::vec3 posCofre = posBaseCofre + glm::vec3(0.0f + mainWindow.getmuevex(), 0.0f + mainWindow.getarticulacion3(), 0.0);
 		spotLights[2].SetPos(posCofre);
-		shaderList[0].SetSpotLights(spotLights, spotLightCount);
 
-
-		// Ejercicio Práctica 8
+		// Ejercicio PrÃ¡ctica 8
 		// Lampara
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 7.0f, 9.0));
@@ -618,7 +623,7 @@ int main()
 		glm::vec3 posLamp = posBaseLamp + glm::vec3(0.0, 0.0f, 0.0f);
 		pointLights[1];
 
-		//Agave ¿qué sucede si lo renderizan antes del coche y el helicóptero?
+		//Agave Â¿quÃ© sucede si lo renderizan antes del coche y el helicÃ³ptero?
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 1.0f, -4.0f));
 		model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
