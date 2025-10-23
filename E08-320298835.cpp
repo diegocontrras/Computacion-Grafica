@@ -411,6 +411,10 @@ int main()
 	glm::mat4 modelaux2(1.0);
 	glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
 	glm::vec3 lowerLight = glm::vec3(0.0f, 0.0f, 0.0f);
+	unsigned int lucesPuntuales;
+	unsigned int luzfaroD;
+	unsigned int luzfaroT;
+	unsigned int lucesActivas = 3;
 
 	////Loop mientras no se cierra la ventana
 	while (!mainWindow.getShouldClose())
@@ -452,8 +456,6 @@ int main()
 
 		//Función de apagar y prender
 
-		unsigned int lucesPuntuales;
-
 		if (mainWindow.getprendida())
 		{
 			lucesPuntuales = pointLightCount;
@@ -468,32 +470,19 @@ int main()
 		shaderList[0].SetPointLights(pointLights, lucesPuntuales);
 		shaderList[0].SetSpotLights(spotLights, spotLightCount);
 
-		unsigned int luzfaroD;
-
 		if (mainWindow.getprendidaD())
 		{
-			luzfaroD = spotLightCount;
+			spotLights[lucesActivas] = spotLights[3];
+			lucesActivas++;
 		}
-		else
-		{
-			luzfaroD = spotLightCount - 1;
-		}
-
-		unsigned int luzfaroT;
 
 		if (mainWindow.getprendidaT())
 		{
-			luzfaroT = spotLightCount;
-		}
-		else
-		{
-			luzfaroT = spotLightCount - 1;
+			spotLights[lucesActivas] = spotLights[4];
+			lucesActivas++;
 		}
 
-		//información al shader de fuentes de iluminación
-		shaderList[0].SetDirectionalLight(&mainLight);
-		shaderList[0].SetPointLights(pointLights, pointLightCount);
-		shaderList[0].SetSpotLights(spotLights, (luzfaroD, luzfaroT));
+		shaderList[0].SetSpotLights(spotLights, lucesActivas);
 
 		color = glm::vec3(1.0f, 1.0f, 1.0f);
 		model = glm::mat4(1.0);
