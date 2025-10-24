@@ -411,10 +411,8 @@ int main()
 	glm::mat4 modelaux2(1.0);
 	glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
 	glm::vec3 lowerLight = glm::vec3(0.0f, 0.0f, 0.0f);
+
 	unsigned int lucesPuntuales;
-	unsigned int luzfaroD;
-	unsigned int luzfaroT;
-	unsigned int lucesActivas = 3;
 
 	////Loop mientras no se cierra la ventana
 	while (!mainWindow.getShouldClose())
@@ -469,6 +467,12 @@ int main()
 		shaderList[0].SetDirectionalLight(&mainLight);
 		shaderList[0].SetPointLights(pointLights, lucesPuntuales);
 		shaderList[0].SetSpotLights(spotLights, spotLightCount);
+
+		unsigned int lucesActivas = 0;
+
+		// luz cofre
+		spotLights[lucesActivas] = spotLights[2];
+		lucesActivas++;
 
 		if (mainWindow.getprendidaD())
 		{
