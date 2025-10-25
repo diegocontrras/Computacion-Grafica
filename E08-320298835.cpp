@@ -55,6 +55,7 @@ Model Vocho;
 Model Llanta_V;
 Model Lampara;
 Model Cofre;
+Model Fuego;
 
 
 Skybox skybox;
@@ -304,6 +305,9 @@ int main()
 	Lampara.LoadModel("Models/Lampara.fbx");
 	Cofre = Model();
 	Cofre.LoadModel("Models/Cofre.fbx");
+	Fuego = Model();
+	Fuego.LoadModel("Models/HumanTorch.fbx");
+	
 
 
 	std::vector<std::string> skyboxFaces;
@@ -376,20 +380,24 @@ int main()
 	unsigned int pointLightCount = 0;
 
 	//Declaración de primer arreglo de luces puntuales
-	//verde
-	pointLights[0] = PointLight(0.0f, 1.0f, 0.0f,
-		0.7f, 0.7f,
-		-6.0f, 1.0f, 5.0f,
-		0.3f, 0.3f, 0.3f);
-	pointLightCount++;
 
 	// Luz Lámpara
-	pointLights[1] = PointLight(0.0f, 0.0f, 1.0f,
+	pointLights[0] = PointLight(0.0f, 0.0f, 1.0f,
 		0.1f, 4.0f,
 		0.0f, 20.0f, 0.0f,
 		1.0f, 0.3f, 0.00009f
 	);
 	pointLightCount++;
+
+	// Luz Antorcha Humana
+	pointLights[1] = PointLight(
+		1.0f, 0.5f, 0.1f,
+		0.2f, 6.0f,        
+		0.0f, 50.0f, 9.0f, 
+		1.0f, 0.07f, 0.0017f 
+	);
+	pointLightCount++;
+
 
 	/*
 	//Segundo arreglo  de luces puntuales blanca, verde, azul, roja
@@ -412,7 +420,8 @@ int main()
 	glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
 	glm::vec3 lowerLight = glm::vec3(0.0f, 0.0f, 0.0f);
 
-	unsigned int lucesPuntuales;
+	PointLight lucesPuntuales[MAX_POINT_LIGHTS];
+	unsigned int lucesActivasP = 0;
 
 	////Loop mientras no se cierra la ventana
 	while (!mainWindow.getShouldClose())
@@ -452,21 +461,20 @@ int main()
 		lowerLight.y -= 0.3f;
 		spotLights[0].SetFlash(lowerLight, camera.getCameraDirection());
 
-		//Función de apagar y prender
+		//Ejercicio3
 
-		if (mainWindow.getprendida())
+		if (mainWindow.getprendida()) 
 		{
-			lucesPuntuales = pointLightCount;
+			lucesPuntuales[lucesActivasP] = pointLights[0];
+			lucesActivasP++;
 		}
-		else
+		if (mainWindow.getprendidaA()) 
 		{
-			lucesPuntuales = pointLightCount - 1;
+			lucesPuntuales[lucesActivasP] = pointLights[1];
+			lucesActivasP++;
 		}
 
-		//información al shader de fuentes de iluminación
-		shaderList[0].SetDirectionalLight(&mainLight);
-		shaderList[0].SetPointLights(pointLights, lucesPuntuales);
-		shaderList[0].SetSpotLights(spotLights, spotLightCount);
+		shaderList[0].SetPointLights(lucesPuntuales, lucesActivasP);
 
 		unsigned int lucesActivas = 0;
 
@@ -616,6 +624,19 @@ int main()
 		glm::vec3 posLamp = posBaseLamp + glm::vec3(0.0, 0.0f, 0.0f);
 		pointLights[1];
 
+		// Ejercicio 3 Practica 8
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, 50.0f, 9.0));
+		model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Fuego.RenderModel();
+
+		glm::vec3 posBaseFuego(0.0f, 50.0f, 9.0f);
+		glm::vec3 posFuego = posBaseFuego + glm::vec3(0.0, 0.0f, 0.0f);
+		pointLights[2];
+
 		//Agave ¿qué sucede si lo renderizan antes del coche y el helicóptero?
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 1.0f, -4.0f));
@@ -629,6 +650,8 @@ int main()
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		meshList[3]->RenderMesh();
 		glDisable(GL_BLEND);
+
+		lucesActivasP = 0;
 
 		glUseProgram(0);
 
