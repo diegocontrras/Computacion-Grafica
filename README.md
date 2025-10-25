@@ -9,3 +9,5 @@
   320298835 <br><br>
   26 de octubre de 2025<br><br>
 </p>
+
+Modelos y texturas se encuentran aquí: https://drive.google.com/drive/folders/1dhkk-5Bys7AT9NwltkkXiFD4eirIFG-v?usp=sharing
