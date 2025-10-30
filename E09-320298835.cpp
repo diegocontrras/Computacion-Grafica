@@ -1,4 +1,4 @@
-﻿/*
+/*
 Animación:
 Simple o básica:Por banderas y condicionales (más de 1 transformación geométrica se ve modificada)
 Compleja: Por medio de funciones y algoritmos.
@@ -71,6 +71,7 @@ Texture pisoTexture;
 Texture AgaveTexture;
 Texture FlechaTexture;
 Texture NumerosTexture;
+Texture MarvelTexture;
 Texture Numero1Texture;
 Texture Numero2Texture;
 
@@ -272,8 +273,6 @@ void CreateShaders()
 }
 
 
-
-
 int main()
 {
 	mainWindow = Window(1366, 768); // 1280, 1024 or 1024, 768
@@ -298,6 +297,8 @@ int main()
 	FlechaTexture.LoadTextureA();
 	NumerosTexture = Texture("Textures/numerosbase.tga");
 	NumerosTexture.LoadTextureA();
+	MarvelTexture = Texture("Textures/MARVEL.png");
+	MarvelTexture.LoadTextureA();
 	Numero1Texture = Texture("Textures/numero1.tga");
 	Numero1Texture.LoadTextureA();
 	Numero2Texture = Texture("Textures/numero2.tga");
@@ -753,7 +754,7 @@ int main()
 		meshList[5]->RenderMesh();
 
 		// Practica 9
-		// Ejercicio 2
+		
 		model = modelaux2;
 		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
@@ -761,14 +762,6 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Arco.RenderModel();
-
-		model = modelaux2;
-		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		color = glm::vec3(0.5f, 0.5f, 0.5f);//llanta con color gris
-		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Letrero.RenderModel();
 
 		model = modelaux2;
 		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
@@ -785,6 +778,34 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		PuertaD.RenderModel();
+
+		// Ejercicio 2
+
+		toffsetnumerocambiau += 0.0005;
+		if (toffsetnumerocambiau > 1.0)
+			toffsetnumerocambiau = 0.0;
+		toffsetnumerov = 0.0;
+		toffsetnumerov = 0.0;
+		toffset = glm::vec2(toffsetnumerocambiau, toffsetnumerov);
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniform2fv(uniformTextureOffset, 1, glm::value_ptr(toffset));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		color = glm::vec3(0.0f, 0.0f, 0.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		MarvelTexture.UseTexture();
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		meshList[6]->RenderMesh();
+		
+		model = modelaux2;
+		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		color = glm::vec3(0.5f, 0.5f, 0.5f);//llanta con color gris
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Letrero.RenderModel();
 
 		glDisable(GL_BLEND);
 
