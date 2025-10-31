@@ -143,6 +143,7 @@ void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat
 	}
 }
 
+Sphere sp = Sphere(1.0, 20, 20);
 
 void CreateObjects()
 {
@@ -763,48 +764,60 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Arco.RenderModel();
 
+		float anguloPuerta = glm::clamp(mainWindow.getarticulacion3(), 0.0f, 90.0f);
+
 		model = modelaux2;
-		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
+		model = glm::translate(model, glm::vec3(23.0f, -8.0f, 8.0f));
+		model = glm::rotate(model, glm::radians(anguloPuerta), glm::vec3(0.0f, -1.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(0.7f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		color = glm::vec3(1.0f, 1.0f, 1.0f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		sp.render();
+
+		model = modelaux2;
+		model = glm::translate(model, glm::vec3(11.4f, -1.7f, 12.0f));
+		model = glm::rotate(model, glm::radians(-anguloPuerta), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		color = glm::vec3(0.5f, 0.5f, 0.5f);//llanta con color gris
+		color = glm::vec3(0.5f, 0.5f, 0.5f);
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		PuertaI.RenderModel();
 
+		float topepuerta = glm::clamp(mainWindow.getmuevex(), -1.6f, 2.0f);
+
 		model = modelaux2;
+		model = glm::translate(model, glm::vec3(0.7 + topepuerta, -1.7f, 12.0f));
+		model = glm::scale(model, glm::vec3(-1.0f, 1.0f, 1.0f)); 
+		color = glm::vec3(0.5f, 0.5f, 0.5f);
+		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		PuertaI.RenderModel();
+
+		/*model = modelaux2;
 		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		color = glm::vec3(0.5f, 0.5f, 0.5f);//llanta con color gris
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		PuertaD.RenderModel();
-
+		*/
 		// Ejercicio 2
 
-		toffsetnumerocambiau += 0.0005;
-		if (toffsetnumerocambiau > 1.0)
-			toffsetnumerocambiau = 0.0;
-		toffsetnumerov = 0.0;
-		toffsetnumerov = 0.0;
-		toffset = glm::vec2(toffsetnumerocambiau, toffsetnumerov);
-		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
-		model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		glUniform2fv(uniformTextureOffset, 1, glm::value_ptr(toffset));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		color = glm::vec3(0.0f, 0.0f, 0.0f);
-		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
-		MarvelTexture.UseTexture();
-		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		meshList[6]->RenderMesh();
-		
+		toffsetnumerocambiau += 0.0005f;
+		if (toffsetnumerocambiau > 1.0f)
+			toffsetnumerocambiau = 0.0f;
+		glm::vec2 toffset = glm::vec2(toffsetnumerocambiau, 0.0f);
+
 		model = modelaux2;
 		model = glm::translate(model, glm::vec3(7.0f, -1.7f, 14.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		color = glm::vec3(0.5f, 0.5f, 0.5f);//llanta con color gris
+		color = glm::vec3(0.5f, 0.5f, 0.5f);
+		glUniform2fv(uniformTextureOffset, 1, glm::value_ptr(toffset));
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		MarvelTexture.UseTexture();
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Letrero.RenderModel();
 
 		glDisable(GL_BLEND);
