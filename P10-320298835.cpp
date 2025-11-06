@@ -798,6 +798,7 @@ void inputKeyframes(bool* keys)
 			saveFrame();
 			printf("movAvion_x es: %f\n", movAvion_x);
 			printf("movAvion_y es: %f\n", movAvion_y);
+			printf("movAvion_z es: %f\n", movAvion_z);
 			printf("presiona P para habilitar guardar otro frame'\n");
 			guardoFrame++;
 			reinicioFrame = 0;
@@ -842,7 +843,7 @@ void inputKeyframes(bool* keys)
 		{
 			//printf("movAvion_x es: %f\n", movAvion_x);
 			movAvion_x -= 50.0f;
-			printf("\n movAvion_-x es: %f\n", movAvion_x);
+			printf("\n movAvion_x es: %f\n", movAvion_x);
 			ciclo++;
 			ciclo2 = 0;
 			printf("\n Presiona la tecla 2 para poder habilitar la variable\n");
@@ -880,7 +881,7 @@ void inputKeyframes(bool* keys)
 		{
 			//printf("movAvion_x es: %f\n", movAvion_x);
 			movAvion_y -= 50.0f;
-			printf("\n movAvion_-y es: %f\n", movAvion_y);
+			printf("\n movAvion_y es: %f\n", movAvion_y);
 			ciclo++;
 			ciclo2 = 0;
 			printf("\n Presiona la tecla 5 para poder habilitar la variable\n");
@@ -894,10 +895,10 @@ void inputKeyframes(bool* keys)
 		{
 			//printf("movAvion_x es: %f\n", movAvion_x);
 			movAvion_z += 50.0f;
-			printf("\n movAvion_-y es: %f\n", movAvion_y);
+			printf("\n movAvion_z es: %f\n", movAvion_z);
 			ciclo++;
 			ciclo2 = 0;
-			printf("\n Presiona la tecla 85 para poder habilitar la variable\n");
+			printf("\n Presiona la tecla 8 para poder habilitar la variable\n");
 		}
 
 	}
@@ -908,7 +909,7 @@ void inputKeyframes(bool* keys)
 		{
 			ciclo = 0;
 			ciclo2++;
-			printf("\n Ya puedes modificar tu variable presionando la tecla 7 o 9\n");
+			printf("\n Ya puedes modificar tu variable presionando la tecla 7, 9 o 0\n");
 		}
 	}
 
@@ -918,7 +919,7 @@ void inputKeyframes(bool* keys)
 		{
 			//printf("movAvion_x es: %f\n", movAvion_x);
 			movAvion_z -= 50.0f;
-			printf("\n movAvion_-y es: %f\n", movAvion_y);
+			printf("\n movAvion_z es: %f\n", movAvion_z);
 			ciclo++;
 			ciclo2 = 0;
 			printf("\n Presiona la tecla 8 para poder habilitar la variable\n");
