@@ -819,7 +819,7 @@ void inputKeyframes(bool* keys)
 		if (ciclo < 1)
 		{
 			//printf("movAvion_x es: %f\n", movAvion_x);
-			movAvion_x += 100.0f;
+			movAvion_x += 50.0f;
 			printf("\n movAvion_x es: %f\n", movAvion_x);
 			ciclo++;
 			ciclo2 = 0;
@@ -841,7 +841,7 @@ void inputKeyframes(bool* keys)
 		if (ciclo < 1)
 		{
 			//printf("movAvion_x es: %f\n", movAvion_x);
-			movAvion_x -= 25.0f;
+			movAvion_x -= 50.0f;
 			printf("\n movAvion_-x es: %f\n", movAvion_x);
 			ciclo++;
 			ciclo2 = 0;
@@ -855,7 +855,7 @@ void inputKeyframes(bool* keys)
 		if (ciclo < 1)
 		{
 			//printf("movAvion_x es: %f\n", movAvion_x);
-			movAvion_y += 25.0f;
+			movAvion_y += 50.0f;
 			printf("\n movAvion_y es: %f\n", movAvion_y);
 			ciclo++;
 			ciclo2 = 0;
