@@ -10,4 +10,4 @@
   9 de noviembre de 2025<br><br>
 </p>
 
-Modelos y texturas se encuentran aquí: 
+Modelos y texturas se encuentran aquí: https://drive.google.com/drive/folders/1OotWM8rL54se_I5KaLnQgv-tVN2PyatJ?usp=drive_link
