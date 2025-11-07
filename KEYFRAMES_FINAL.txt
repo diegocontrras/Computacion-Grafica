@@ -1,0 +1,84 @@
+KeyFrame: [0] Movimiento del Fantasticar en x: 0
+KeyFrame: [0] Movimiento del Fantasticar en y: 0
+KeyFrame: [0] Movimiento del Fantasticar en z: 0
+KeyFrame: [0] Giro del Fantasticar: 90
+KeyFrame: [1] Movimiento del Fantasticar en x: 0
+KeyFrame: [1] Movimiento del Fantasticar en y: 0
+KeyFrame: [1] Movimiento del Fantasticar en z: 50
+KeyFrame: [1] Giro del Fantasticar: 90
+KeyFrame: [2] Movimiento del Fantasticar en x: 0
+KeyFrame: [2] Movimiento del Fantasticar en y: 50
+KeyFrame: [2] Movimiento del Fantasticar en z: 50
+KeyFrame: [2] Giro del Fantasticar: 90
+KeyFrame: [3] Movimiento del Fantasticar en x: 0
+KeyFrame: [3] Movimiento del Fantasticar en y: 50
+KeyFrame: [3] Movimiento del Fantasticar en z: 100
+KeyFrame: [3] Giro del Fantasticar: 90
+KeyFrame: [4] Movimiento del Fantasticar en x: 0
+KeyFrame: [4] Movimiento del Fantasticar en y: 100
+KeyFrame: [4] Movimiento del Fantasticar en z: 100
+KeyFrame: [4] Giro del Fantasticar: 90
+KeyFrame: [5] Movimiento del Fantasticar en x: 0
+KeyFrame: [5] Movimiento del Fantasticar en y: 100
+KeyFrame: [5] Movimiento del Fantasticar en z: 150
+KeyFrame: [5] Giro del Fantasticar: 90
+KeyFrame: [6] Movimiento del Fantasticar en x: 0
+KeyFrame: [6] Movimiento del Fantasticar en y: 150
+KeyFrame: [6] Movimiento del Fantasticar en z: 150
+KeyFrame: [6] Giro del Fantasticar: 90
+KeyFrame: [7] Movimiento del Fantasticar en x: 0
+KeyFrame: [7] Movimiento del Fantasticar en y: 150
+KeyFrame: [7] Movimiento del Fantasticar en z: 200
+KeyFrame: [7] Giro del Fantasticar: 90
+KeyFrame: [8] Movimiento del Fantasticar en x: 0
+KeyFrame: [8] Movimiento del Fantasticar en y: 150
+KeyFrame: [8] Movimiento del Fantasticar en z: 200
+KeyFrame: [8] Giro del Fantasticar: 180
+KeyFrame: [9] Movimiento del Fantasticar en x: 50
+KeyFrame: [9] Movimiento del Fantasticar en y: 150
+KeyFrame: [9] Movimiento del Fantasticar en z: 200
+KeyFrame: [9] Giro del Fantasticar: 180
+KeyFrame: [10] Movimiento del Fantasticar en x: 100
+KeyFrame: [10] Movimiento del Fantasticar en y: 150
+KeyFrame: [10] Movimiento del Fantasticar en z: 200
+KeyFrame: [10] Giro del Fantasticar: 180
+KeyFrame: [11] Movimiento del Fantasticar en x: 150
+KeyFrame: [11] Movimiento del Fantasticar en y: 150
+KeyFrame: [11] Movimiento del Fantasticar en z: 200
+KeyFrame: [11] Giro del Fantasticar: 180
+KeyFrame: [12] Movimiento del Fantasticar en x: 200
+KeyFrame: [12] Movimiento del Fantasticar en y: 150
+KeyFrame: [12] Movimiento del Fantasticar en z: 200
+KeyFrame: [12] Giro del Fantasticar: 180
+KeyFrame: [13] Movimiento del Fantasticar en x: 200
+KeyFrame: [13] Movimiento del Fantasticar en y: 150
+KeyFrame: [13] Movimiento del Fantasticar en z: 200
+KeyFrame: [13] Giro del Fantasticar: 270
+KeyFrame: [14] Movimiento del Fantasticar en x: 200
+KeyFrame: [14] Movimiento del Fantasticar en y: 150
+KeyFrame: [14] Movimiento del Fantasticar en z: 150
+KeyFrame: [14] Giro del Fantasticar: 270
+KeyFrame: [15] Movimiento del Fantasticar en x: 200
+KeyFrame: [15] Movimiento del Fantasticar en y: 100
+KeyFrame: [15] Movimiento del Fantasticar en z: 150
+KeyFrame: [15] Giro del Fantasticar: 270
+KeyFrame: [16] Movimiento del Fantasticar en x: 200
+KeyFrame: [16] Movimiento del Fantasticar en y: 100
+KeyFrame: [16] Movimiento del Fantasticar en z: 100
+KeyFrame: [16] Giro del Fantasticar: 270
+KeyFrame: [17] Movimiento del Fantasticar en x: 200
+KeyFrame: [17] Movimiento del Fantasticar en y: 50
+KeyFrame: [17] Movimiento del Fantasticar en z: 100
+KeyFrame: [17] Giro del Fantasticar: 270
+KeyFrame: [18] Movimiento del Fantasticar en x: 200
+KeyFrame: [18] Movimiento del Fantasticar en y: 50
+KeyFrame: [18] Movimiento del Fantasticar en z: 50
+KeyFrame: [18] Giro del Fantasticar: 270
+KeyFrame: [19] Movimiento del Fantasticar en x: 200
+KeyFrame: [19] Movimiento del Fantasticar en y: 0
+KeyFrame: [19] Movimiento del Fantasticar en z: 50
+KeyFrame: [19] Giro del Fantasticar: 270
+KeyFrame: [20] Movimiento del Fantasticar en x: 200
+KeyFrame: [20] Movimiento del Fantasticar en y: 0
+KeyFrame: [20] Movimiento del Fantasticar en z: 50
+KeyFrame: [20] Giro del Fantasticar: 360
